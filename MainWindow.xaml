@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Вычисление интеграла"
+        Height="300"
+        Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Текст интеграла -->
+        <StackPanel Grid.Row="0" Margin="0 10 0 10">
+            <TextBlock Text="Вычислить интеграл:" 
+                       FontSize="16" FontWeight="Bold" />
+            <TextBlock Text="∫ от 1 до 100000 (2x - ln(2x) + 234) dx" 
+                       FontSize="14" Margin="0 5 0 0" />
+        </StackPanel>
+
+        <!-- Выбор метода -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 10">
+            <TextBlock Text="Метод:" VerticalAlignment="Center" FontSize="14"/>
+            <ComboBox x:Name="cmbMethod" Width="220" Margin="10 0 0 0" FontSize="14">
+                <ComboBoxItem Content="Метод трапеций" IsSelected="True"/>
+                <ComboBoxItem Content="Метод средних прямоугольников"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Кнопка -->
+        <Button Grid.Row="2" Content="Вычислить"
+                Width="160" Height="40"
+                HorizontalAlignment="Center"
+                Click="BtnCalculate_Click"/>
+
+        <!-- Результат -->
+        <StackPanel Grid.Row="3" Margin="0 20 0 0">
+            <TextBlock x:Name="txtResult" 
+                       FontSize="16"
+                       FontWeight="Bold"
+                       TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
