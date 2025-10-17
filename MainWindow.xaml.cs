@@ -16,7 +16,7 @@ namespace WpfApplication1
             {
                 double a = 1;
                 double b = 100000;
-                int n = 100000;
+                int n = 1000000;
 
                 // f(x) = 2x - ln(2x) + 234
                 Func<double, double> f = (x) => x*x;
@@ -40,4 +40,5 @@ namespace WpfApplication1
             }
         }
     }
+
 }
